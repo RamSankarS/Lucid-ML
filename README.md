@@ -2,7 +2,7 @@
 
 **Interactive Explainable AI (XAI) & Counterfactual Playground**
 
-Machine learning models are incredibly powerful however let's be real—they are often treated as black boxes. When an algorithm denies a loan, flags a medical scan, or filters a resume users deserve to know *why* it did what it did.
+Machine learning models are incredibly powerful however let's be real they are often treated as black boxes. When an algorithm denies a loan, flags a medical scan, or filters a resume users deserve to know *why* it did what it did.
 
 I built **Lucid-ML** in hopes to bridge the gap between raw model predictions and human understanding. This isn't merely a dashboard. It's an interactive environment where users can look under the hood of a machine learning model, understand feature importance, and explore "what-if" scenarios. Something, I would have liked during my initial days with understanding machine learning.
 
@@ -39,4 +39,3 @@ My approached to this would be as a production-grade full-stack application rath
 - [ ] Deploy frontend to Vercel and backend to Render/Railway.
 
 ---
-*Built by [Your Name/GitHub Profile] out of a passion for transparent, trustworthy AI.*
