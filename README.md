@@ -15,7 +15,7 @@ Lucid-ML takes a trained machine learning model and breaks down its decision-mak
 
 ##  The Tech Stack
 
-My approached to this would be as a production-grade full-stack application rather than a simple solo project to ensure a snappy user experience and a highly concurrent backend.
+My approach to this would be as a production-grade full-stack application rather than a simple solo project to ensure a snappy user experience and a highly concurrent backend.
 
 **Frontend:**
 * React + Vite
