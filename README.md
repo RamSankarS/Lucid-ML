@@ -18,14 +18,14 @@ Lucid-ML takes a trained machine learning model and breaks down its decision-mak
 My approached to this would be as a production-grade full-stack application rather than a simple solo project to ensure a snappy user experience and a highly concurrent backend.
 
 **Frontend:**
-* React + Vite (for blazing fast HMR and builds)
-* Tailwind CSS (for clean, responsive UI)
-* Recharts / Chart.js (for dynamic, interactive SHAP and metric visual plots)
+* React + Vite
+* Tailwind CSS 
+* Recharts / Chart.js
 
 **Backend & ML:**
-* Python + FastAPI (for high-performance, async API endpoints)
-* Scikit-Learn / PyTorch (for model training and inference)
-* SHAP & DiCE (for the explainability engine)
+* Python + FastAPI
+* Scikit-Learn / PyTorch 
+* SHAP & DiCE 
 
 ##  Running Locally
 *(Instructions will be updated as the project scaffolding is completed)*
