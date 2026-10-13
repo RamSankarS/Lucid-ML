@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import type { Telemetry, PredictionResult } from './types';
-import SpaceBackground from './components/SpaceBackground';
-import TelemetryPanel from './components/TelemetryPanel';
-import XaiDashboard from './components/XaiDashboard';
+import { useState, useEffect } from "react";
+import type { Telemetry, PredictionResult } from "./types";
+import SpaceBackground from "./components/SpaceBackground";
+import TelemetryPanel from "./components/TelemetryPanel";
+import XaiDashboard from "./components/XaiDashboard";
 
 export default function App() {
   const [telemetry, setTelemetry] = useState<Telemetry>({
@@ -19,9 +19,10 @@ export default function App() {
     setLoading(true);
     const timer = setTimeout(async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/v1/predict', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+        const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+        const response = await fetch(`${API_URL}/api/v1/predict`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(telemetry),
         });
         if (response.ok) {
@@ -37,7 +38,10 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [telemetry]);
 
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>, field: keyof Telemetry) => {
+  const handleSliderChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    field: keyof Telemetry,
+  ) => {
     setTelemetry({ ...telemetry, [field]: parseFloat(e.target.value) });
   };
 

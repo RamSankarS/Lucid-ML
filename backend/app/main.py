@@ -33,6 +33,10 @@ class AsteroidTelemetry(BaseModel):
 async def health_check():
     return {"status": "active", "system": "Cosmic XAI Backend Engine", "version": "1.0.0"}
 
+@app.get("/")
+async def root():
+    return {"status": "online", "service": "Cosmic XAI Engine API"}
+
 @app.post("/api/v1/predict")
 async def predict_hazard(telemetry: AsteroidTelemetry):
     # Convert Pydantic model to a standard Python dictionary
