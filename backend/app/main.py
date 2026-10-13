@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-# Import our ML explainer singleton
+# explainer singleton
 from app.ml.explainer import cosmic_explainer
 
 app = FastAPI(
@@ -19,18 +19,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# -----------------------------------------
 # Pydantic Schema for Input Validation
-# -----------------------------------------
+
 class AsteroidTelemetry(BaseModel):
     absolute_magnitude: float = Field(..., description="Absolute magnitude (luminosity)", ge=10, le=35)
     est_diameter_max: float = Field(..., description="Maximum estimated diameter in km", ge=0.0)
     relative_velocity: float = Field(..., description="Relative velocity in km/h", ge=0.0)
     miss_distance: float = Field(..., description="Miss distance from Earth in km", ge=0.0)
 
-# -----------------------------------------
 # API Routes
-# -----------------------------------------
+
 @app.get("/api/v1/health")
 async def health_check():
     return {"status": "active", "system": "Cosmic XAI Backend Engine", "version": "1.0.0"}
