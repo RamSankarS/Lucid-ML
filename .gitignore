@@ -63,7 +63,6 @@ htmlcov/
 # Machine Learning Large Artifacts & Raw Datasets
 # (Track baseline scripts/schemas, but ignore heavy generated weights and datasets)
 *.pkl
-*.joblib
 *.h5
 *.onnx
 *.pt
