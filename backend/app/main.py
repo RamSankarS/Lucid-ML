@@ -19,6 +19,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+class ExplainRequest(BaseModel):
+    telemetry: dict
+    prediction: dict
+    explanation: dict
+
+@app.post("/api/v1/explain")
+async def explain_anomaly(data: ExplainRequest):
+    # Mocking a stellar retro response using dot notation for Pydantic fields
+    explanation_text = (
+        f"Update needed, In future an AI will assist you. Currently you are left to your own interpretation."    
+    )
+    
+    return {"analysis": explanation_text}
+
 # Pydantic Schema for Input Validation
 
 class AsteroidTelemetry(BaseModel):
