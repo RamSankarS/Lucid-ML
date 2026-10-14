@@ -3,7 +3,6 @@ import type { Telemetry, PredictionResult } from './types';
 import SpaceBackground from './components/SpaceBackground';
 import TelemetryPanel from './components/TelemetryPanel';
 import XaiDashboard from './components/XaiDashboard';
-
 const API_URL = import.meta.env.PROD 
   ? 'https://lucid-ml.onrender.com' 
   : 'http://127.0.0.1:8000';
@@ -73,7 +72,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-black text-green-500 p-8 font-mono flex gap-8 tracking-widest overflow-hidden selection:bg-green-900 selection:text-green-100">
+    <div className="relative min-h-screen bg-black text-green-500 p-4 font-mono flex gap-8 tracking-widest overflow-hidden selection:bg-green-900 selection:text-green-100">
       <SpaceBackground />
       <TelemetryPanel 
         telemetry={telemetry} 
